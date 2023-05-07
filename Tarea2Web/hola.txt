@@ -1,0 +1,21 @@
+    """error = None
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        email = request.form['email']
+        celular = request.form['celular']
+        region = request.form['region']
+        comuna = request.form['comuna']
+        calle_numero = request.form['calle-numero']
+        tipo = request.form['tipo']
+        cantidad = request.form['cantidad']
+        fecha_disponibilidad= request.form['fecha-disponibilidad']
+        descripcion = request.form['descripcion']
+        condiciones = request.form['condiciones']
+
+        if donacion_isvalid(nombre,celular,email,region,comuna,calle_numero,tipo,cantidad,fecha_disponibilidad,descripcion,condiciones):
+          return redirect(url_for('index'))
+        else:
+          error = 'Formulario Incorrecto'
+
+    return render_template('agregar-donacion.html', error=error)
+    """

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 1</title>
+    <link rel="stylesheet" href="portada.css">
+</head>
+
+
+<body>  
+      <h2>Tarea 2: Gonzalo Pérez Reich</h2>
+      <p>Puede presionar cualquiera de las cuatro frases que se encuentran abajo y será dirigido a su respectivo documento.</p>
+
+      <div class="topnav">
+        <a href="{{ url_for('agregar_donacion')}}">Agregar una donacion</a>
+        <a href="{{ url_for('agregar_pedido')}}">Agregar un pedido</a>
+        <a href="{{ url_for('ver_donaciones')}}">Ver donaciones</a>
+        <a href="{{ url_for('ver_pedidos')}}">Ver pedidos</a>
+      </div>
+    </body>
+    
+
+  
+</html>

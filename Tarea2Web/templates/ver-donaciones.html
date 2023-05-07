@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ver_donaciones.css')}}">
+</head>
+<body>
+    <div>
+
+    
+    <table id="Tabla">
+        <thead>
+        
+        <tr>
+          <th>Comuna</th>
+          <th>Tipo</th>
+          <th>Cantidad</th>
+          <th>Fecha</th>
+          <th>Nombre</th>
+          <th>Foto</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+           
+        <tr onclick="location.href='/ver-donaciones/donacion'"> 
+          <td>Macul</td>
+          <td>Verdura</td>
+          <td>100</td>
+          <td>18/12/23</td>
+          <td>Roberto Manf</td>
+          <td><img src="{{ url_for('static', filename='media/verduras2.jpg') }}" class="imagen120" alt="verduras2"></td>
+        </tr>
+
+       
+          <tr onclick="location.href='/ver-donaciones/donacion'"> 
+            <td>La Higuera</td>
+            <td>Otro</td>
+            <td>50</td>
+            <td>25/01/21</td>
+            <td>Pedro Carcuro</td>
+            <td><img src="{{ url_for('static', filename='media/ropa.jpg') }}" class="imagen120" alt="ropa1"></td>
+          </tr>
+        
+          <tr onclick="location.href='/ver-donaciones/donacion'"> 
+            <td>Lo espejo</td>
+            <td>Fruta</td>
+            <td>48</td>
+            <td>14/01/22</td>
+            <td>Gonzalo Navarro</td>
+            <td><img src="{{ url_for('static', filename='media/berris.jpg') }}" class="imagen120" alt="berris"></td>
+          </tr>
+        
+          <tr onclick="location.href='/ver-donaciones/donacion'"> 
+            <td>Villa alemana</td>
+            <td>Fruta</td>
+            <td>83</td>
+            <td>19/10/22</td>
+            <td>Tulio Triviño</td>
+            <td><img src="{{ url_for('static', filename='media/peras.jpg') }}" class="imagen120" alt="pera"></td>
+          </tr>
+        
+          <tr onclick="location.href='/ver-donaciones/donacion'"> 
+            <td>Vitacura</td>
+            <td>Verdura</td>
+            <td>10</td>
+            <td>06/11/22</td>
+            <td>Juan Carlos Bodoque</td>
+            <td><img src="{{ url_for('static', filename='media/verduras.jpg') }}" class="imagen120" alt="verdura"></td>
+          </tr> 
+        </table>
+
+        <button type="button" id="volver">Volver al inicio</button>
+    </div>
+    <script>
+      const redirigir = ()=> {
+        window.location.href="/";
+      }
+      let submitBtn = document.getElementById("volver");
+      submitBtn.addEventListener("click", redirigir);
+    </script>
+</body>
+</html>

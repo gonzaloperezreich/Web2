@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ejemplo</title>
+  </head>
+  <body>
+
+    <label for="region">Selecciona una región:</label>
+    <select id="region">
+      <option value="">--Selecciona una región--</option>
+    </select>
+    
+    <label for="comuna">Selecciona una comuna:</label>
+    <select id="comuna">
+      <option value="">--Selecciona una comuna--</option>
+    </select>
+    
+
+    <script>
+
+        fetch('region_comuna.json')
+            .then(response => response.json())
+            .then(data => {
+            // Crear opciones en el selector de regiones
+            const regionSelector = document.getElementById('region');
+            data.regiones.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region.nombre;
+                option.text = region.nombre;
+                regionSelector.appendChild(option);
+            });
+
+            
+            regionSelector.addEventListener('change', () => {
+                const regionSeleccionada = regionSelector.value;
+                const region = data.regiones.find(r => r.nombre === regionSeleccionada);
+                const comunas = region.comunas;
+
+                const comunaSelector = document.getElementById('comuna');
+                comunaSelector.innerHTML = '';
+                comunas.forEach(comuna => {
+                const option = document.createElement('option');
+                option.value = comuna;
+                option.text = comuna.nombre;
+                comunaSelector.appendChild(option);
+        });
+      });
+    });
+
+    </script>
+  </body>
+</html>

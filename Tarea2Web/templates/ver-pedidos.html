@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ver_donaciones.css')}}">
+</head>
+<body>
+    <div>
+
+    
+    <table id="Tabla">
+        <thead>
+        
+        <tr>
+          <th>Comuna</th>
+          <th>Tipo</th>
+          <th>Descripcion</th>
+          <th>Cantidad</th>
+          <th>Nombre solicitante</th>
+        
+        </tr>
+        </thead>
+
+        <tbody>
+
+           
+        <tr > 
+          <td>Macul</td>
+          <td>Verdura</td>
+          <td>Necesito choclos para realizar la humita más grande de la historia.</td>
+          <td>+100</td>
+          <td>Roberto Manf</td>
+        </tr>
+
+       
+          <tr > 
+            <td>La Higuera</td>
+            <td>Otro</td>
+            <td>Buscamos donación de ropa para incendio que debastó la zona.</td>
+            <td>indefinido</td>
+            <td>Pedro Carcuro</td>
+          </tr>
+        
+          <tr onclick="location.href='informacion-pedido.html'"> 
+            <td>Lo espejo</td>
+            <td>Fruta</td>
+            <td>Nesitamos melon tuna para relizar el festival del melon con vino.</td>
+            <td>+30</td>
+            <td>Gonzalo Navarro</td>
+
+          </tr>
+        
+          <tr > 
+            <td>Villa alemana</td>
+            <td>Fruta</td>
+            <td>Buscamos socio que done fruta para crear mermelada sustentable, sin que se pierda fruta.</td>
+            <td>73</td>
+            <td>Tulio Triviño</td>
+
+          </tr>
+        
+          <tr > 
+            <td>Vitacura</td>
+            <td>Verdura</td>
+            <td>Se agradece cualquier tipo de donación de verduras para restaurante.</td>
+            <td>5162</td>
+            <td>Juan  Bodoque</td>
+          </tr> 
+        </table>
+
+        <button type="button" id="volver">Volver al inicio</button>
+    </div>
+    <script>
+      const redirigir = ()=> {
+        window.location.href="inicio.html";
+      }
+      let submitBtn = document.getElementById("volver");
+      submitBtn.addEventListener("click", redirigir);
+    </script>
+</body>
+</html>

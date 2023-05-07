@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} pedido{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="ver_donaciones.css">
+{% endblock %}
+{% block container %}
+    <div>
+
+    
+    <table id="Tabla">
+        <thead>
+        
+        <tr>
+          <th>Region</th>
+          <th>Comuna</th>
+          <th>Tipo</th>
+          <th>Descripcion</th>
+          <th>Cantidad</th>
+          <th>Nombre solicitante</th>
+          <th>Correo solicitante</th>
+          <th>Celular</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+
+           
+        <tr> 
+            <td>Metropolitana</td>
+            <td>Lo espejo</td>
+            <td>Fruta</td>
+            <td>Nesitamos melon tuna para relizar el festival del melon con vino.</td>
+            <td>+30</td>
+            <td>Gonzalo Navarro</td>
+            <td>robertomanf@abcdin.cl</td>      
+            <td>+56992895341</td>
+            </tr>
+    </table>
+
+    <button type="button" id="volver">Volver al inicio</button>
+    <button type="button" id="volver2">Volver a Pedidos</button>
+    </div>
+
+{% endblock %}
+{% block javascript %}
+  <script src="infopedido.js"></script>
+{% endblock%}

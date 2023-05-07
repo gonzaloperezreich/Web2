@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %} Pedidos {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pedido.css')}}">
+{% endblock %}
+
+{% block content %}
+<body>
+    
+        <div id="val-box" class="alerta1" >
+            <h2 id="val-msg" ></h2>
+            <ul id="val-list"></ul>
+        </div>
+    
+    {% if error %}
+    <div class="error-message">
+        {{ error }}
+    </div>
+    {% endif %}
+    </div>
+
+    <div>
+    <form name="myForm" class="Formulario-pedido"  action="{{url_for('agregar_pedido')}}" method="post" enctype="multipart/form-data">
+
+        <div id="nombre-input" class="Grupo-input">
+            <label for="nombre">Nombre : </label>
+            <input id="nombre" name="nombre" type="text" minlength="3" maxlength="80" size="80" required>
+        </div>
+
+        <div id="email-input" class="Grupo-input">
+            <label for="email">Correo: </label>
+            <input id="email" name="email" type="email"  maxlength="80" size="30" required>
+        </div>
+
+        <div id="celular-input" class="Grupo-input">
+            <label for="celular">Celular: </label>
+            <input id="celular" name="celular" type="tel" size="15" >
+        </div>
+
+        <div id="region-input" class="Grupo-input">
+            <label for="region">Region:</label>
+            <select id="region">
+                {% for region in regiones%}
+                    <option value="{{ region[0] }}">{{ region[0] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div id="comuna-input" class="Grupo-input">
+            <label for="comuna">Comuna:</label>
+            <select id="comuna">
+                <option value="">Seleccione una Comuna</option>
+            </select>
+        </div>
+
+
+        <div id="tipo-input" class="Grupo-input">
+            <label for="tipo">Tipo de Pedido: </label>
+            <select name="tipo" id="tipo">
+                <option value="--">Seleccione Tipo de pedido</option>
+                <option value="Fruta">Fruta</option>
+                <option value="Verdura">Verdura</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+
+        <div id="descripcion-input" class="Grupo-input">
+            <label for="descripcion">Descripcion: </label>
+            <input id="descripcion" name="descripcion" type="text" size="80" maxlength="250" >
+        </div>       
+
+        <div id="cantidad-input" class="Grupo-input">
+            <label for="cantidad">Cantidad: </label>
+            <input id="cantidad" name="cantidad" type="number" required>
+        </div>
+
+        <div class="Botones">
+            <button id="segundoboton" type="submit" class="Botones">Agregar Pedido</button>  
+            <button type="button" id="volver" class="Botones">Volver al inicio</button>
+        </div>
+
+
+        <div class="oculto" id="id01" >
+            <h1>¿Confirma que desea agregar este pedido?</h1>
+            <button type="button" onclick="mostrarAlerta()" id="si-btm">Si, confirmo</button>
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" id="no">No, quiero volver al formulario</button>
+            <button type="button" id="volver2">Volver al inicio</button>
+              
+        </div>
+        </form>
+        
+        
+    </div>
+
+{% endblock %}
+{% block javascript %}
+    <script src="validacion_form_pedido.js"></script>
+{% endblock %}

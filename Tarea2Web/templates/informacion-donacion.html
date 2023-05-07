@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/informacion-don.css')}}">
+</head>
+<body>
+    <div>
+
+    
+    <table id="Tabla">
+        <thead>
+        
+        <tr>
+          <th>Region</th>
+          <th>Comuna</th>
+          <th>Tipo</th>
+          <th>Descripcion</th>
+          <th>Cantidad</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Celular</th>
+          <th>Fecha de disponibilidad</th>
+          <th>Condiciones</th>
+          <th>Foto/s</th> 
+        </tr>
+        </thead>
+
+        <tbody>
+
+           
+        <tr> 
+            <td>Metropolitana</td>
+            <td>Macul</td>
+            <td>Verdura</td>
+            <td>100 choclos maduros, se estima que el 70% debe estar en buen estado</td>
+            <td>100</td>
+            <td>Roberto manf</td>
+            <td>robertomanf@abcdin.cl</td>
+            <td>+56992895340</td>
+            <td>18/12/23</td>
+            <td>Debe ser recogido en el local 33B, entre 8:00 y 16:00 hrs.</td>          
+            <td>
+                <img src="verduras2.jpg"  class="imagen640" alt="verduras2">
+                <img src="verduras.jpg"  class="imagen640" id="foto" alt="verduras">
+            </td>
+            </tr>
+    </table>
+
+    <button type="button" id="volver">Volver al inicio</button>
+    <button type="button" id="volver2">Volver a Donaciones</button>
+    </div>
+    <script src="info-donacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %} Agregar Donacion{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/donacion.css')}}">
+{% endblock %}
+{% block content %}
+        <div id="val-box" class="alerta1">
+            <h2 id="val-msg"></h2>
+            <ul id="val-list"></ul>
+        </div>
+    <div>
+        <form name="myForm" class="myForm">
+            <div id="nombre-input" class="Grupo-input">
+                <label for="nombre">Nombre : </label>
+                <input id="nombre" name="nombre" type="text" minlength="3" maxlength="80" size="80" required><br>
+            </div>
+
+            <div id="email-input" class="Grupo-input">
+                <label for="email">Correo: </label>
+                <input id="email" name="email" type="email" maxlength="80" size="30" required><br>
+            </div>
+
+            <div id="celular-input" class="Grupo-input">
+                <label for="celular">Celular: </label>
+                <input id="celular" name="celular" type="text" size="15" required><br>
+            </div>
+
+            <div id="region-input" class="Grupo-input">
+                <label for="region">Region</label>
+                <select id="region" name="region">
+                    {% for region in regiones%}
+                        <option value="{{ region[0] }}">{{ region[0] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div id="comuna-input" class="Grupo-input">
+                <label for="comuna">Comuna</label>
+                <select id="comuna" name="comuna">
+                    <option value="--">--</option>
+                </select>
+                
+            </div>
+
+            <div id="calle-numero-input" class="Grupo-input">
+                <label for="calle-numero">Direccion (calle y numero): </label>
+                <input id="calle-numero" name="calle-numero" type="text" size="80" required>
+            </div>
+
+            <div id="tipo-input" class="Grupo-input">
+                <label for="tipo">Tipo de donación: </label>
+                <select name="tipo" id="tipo">
+                    <option value="--">--</option>
+                    <option value="Fruta">Fruta</option>
+                    <option value="Verdura">Verdura</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <div id="cantidad-input" class="Grupo-input">
+                <label for="cantidad">Cantidad: </label>
+                <input id="cantidad" name="cantidad" type="number"  required>
+            </div>
+
+            <div id="fecha-disponibilidad-input" class="Grupo-input">
+                <label for="fecha-disponibilidad">Fecha de disponibilidad: </label>
+                <input id="fecha-disponibilidad" name="fecha-disponibilidad" type="date" required>
+            </div>
+
+            <div id="descripcion-input" class="Grupo-input">
+                <label for="descripcion">Descripcion: </label>
+                <input id="descripcion" name="descripcion" type="text" maxlength="80" size="80">
+            </div>
+
+            <div id="condiciones-input" class="Grupo-input">
+                <label for="condiciones">Condiciones: </label>
+                <input id="condiciones" name="condiciones" type="text" maxlength="80" size="80" >
+            </div>
+
+
+            <div id="Foto-input" class="Grupo-input">
+                <label for="Foto">Foto donación (hasta 3 archivos): </label>
+                <input id="Foto" name="Foto" type="file" accept="image/*" required>
+            </div>
+
+
+            <div id="gracias" style="display: none;">
+                Gracias por enviar el formulario.
+            </div>
+              
+            <div id="Botones">
+            <button id="submit-btn" class="Botones">Agregar donacion</button>
+            <button type="button" id="volver" class="Botones">Volver al inicio</button>
+            </div>
+
+            <div class="oculto" id="id01" >
+                <h1>¿Confirma que desea agregar esta donación?</h1>
+                <button type="button" onclick="mostrarAlerta()" id="si-btm">Si, confirmo</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" id="no">No, quiero volver al formulario</button>
+                <button type="button" id="volver2">Volver al inicio</button>     
+            </div>
+
+        </form>
+        
+    </div>
+{% endblock %}
+{% block javascript %}
+   <!--  <script src="validacion_form_donacion.js"></script>-->
+{% endblock  %}
